@@ -1,0 +1,35 @@
+.main-pane {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  h1 {
+    color: #333333
+  }
+}
+
+.part-grid {
+  display: flex;
+  justify-content: center;
+}
+
+.part {
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  height: 200px;
+  width: 200px;
+  margin: 5px;
+  background: #333333;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.05);
+  }
+  h1 {
+    color: white;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    text-align: center;
+    transform: translateY(-50%);
+  }
+}

@@ -1,0 +1,38 @@
+.stuff-grid {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.thing-pane {
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  width: 270px;
+  height: 270px;
+  margin: 5px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1px 1px 3px #333333;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.thing-info {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 10px;
+  h3 {
+    font-weight: 800;
+  }
+  h5 {
+    color: #6eb5ff;
+  }
+}

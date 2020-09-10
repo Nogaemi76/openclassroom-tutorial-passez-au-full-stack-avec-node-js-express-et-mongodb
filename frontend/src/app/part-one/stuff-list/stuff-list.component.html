@@ -1,0 +1,16 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<p class="text-center" *ngIf="stuff.length <= 0 && !loading">Rien à vendre !</p>
+<div class="stuff-grid" *ngIf="stuff.length >= 0">
+  <div class="thing-pane"
+       *ngFor="let thing of stuff"
+       [ngClass]="{'open': thing._id === chosenId}"
+       [ngStyle]="{'background-image': 'url(' + thing.imageUrl + ')'}"
+       (click)="onProductClicked(thing._id)">
+    <div class="thing-info">
+      <h3>
+        {{ thing.title }}
+      </h3>
+      <h5>{{ thing.price / 100 | currency:'EUR' }}</h5>
+    </div>
+  </div>
+</div>

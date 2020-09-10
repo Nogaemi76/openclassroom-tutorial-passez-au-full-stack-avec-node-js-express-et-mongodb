@@ -1,0 +1,28 @@
+<mat-spinner *ngIf="loading"></mat-spinner>
+<div *ngIf="!loading" class="col-sm-6 offset-sm-3 mt-2">
+  <form [formGroup]="thingForm">
+    <div class="form-group">
+      <label for="title">Titre</label>
+      <input type="text" placeholder="Que vendez-vous ?" id="title" formControlName="title" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="price">Prix (en €)</label>
+      <input type="number" id="price" class="form-control" formControlName="price" min="0">
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea name="description"
+                id="description"
+                cols="30" rows="7"
+                class="form-control"
+                formControlName="description"
+                placeholder="Décrivez votre objet (type, qualité, etc.)"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="imageUrl">URL de l'image</label>
+      <input type="text" placeholder="http://..." id="imageUrl" formControlName="imageUrl" class="form-control">
+    </div>
+    <button class="btn btn-success" (click)="onSubmit()" [disabled]="thingForm.invalid">Valider</button>
+    <p class="alert-danger" *ngIf="errorMessage">{{ errorMessage }}</p>
+  </form>
+</div>
